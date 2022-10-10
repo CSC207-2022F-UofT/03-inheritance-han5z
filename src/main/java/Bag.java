@@ -113,8 +113,8 @@ public abstract class Bag {
         if (this.numberOfContents == 0) {
             return null;
         } else {
-            String temp = contents[this.numberOfContents];
-            contents[this.numberOfContents] = null;
+            String temp = contents[this.numberOfContents - 1];
+            contents[this.numberOfContents - 1] = "";
             this.numberOfContents -= 1;
             return temp;
         }
