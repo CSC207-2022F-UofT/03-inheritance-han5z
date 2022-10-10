@@ -114,7 +114,7 @@ public abstract class Bag {
             return null;
         } else {
             String temp = contents[this.numberOfContents - 1];
-            contents[this.numberOfContents - 1] = "";
+            contents[this.numberOfContents - 1] = null;
             this.numberOfContents -= 1;
             return temp;
         }
@@ -132,6 +132,11 @@ public abstract class Bag {
     public void increaseCapacity(int n) {
         // TODO: Implement this method.
         this.capacity += n;
+        String[] new_contents = new String[this.capacity];
+        for (int i = 0; i < this.contents.length; i++) {
+            new_contents[i] = this.contents[i];
+        }
+        this.contents = new_contents;
     }
 
     /**
